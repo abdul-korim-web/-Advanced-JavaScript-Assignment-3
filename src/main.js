@@ -12,13 +12,13 @@ let cancel = document.querySelector(`.cancel`)
 let balanceAction;
 
 // history li function
-function li(addOrWithdraw,mainBalances){
+function li(transactionType,addOrWithdraw,mainBalances){
   return`
-  <li class="border-b-1 border-gray-300 p-2 md:p-4 md:text-2xl text-xl font-semibold">${new Date().toLocaleString()} - Add: $${addOrWithdraw} | Balance: $${mainBalances}</li>
+  <li class="border-b-1 border-gray-300 p-2 md:p-4 md:text-2xl text-xl font-semibold">${new Date().toLocaleString()} - ${transactionType}: $${addOrWithdraw} | Balance: $${mainBalances}</li>
 
   `
 }
-console.log(li());
+
 
 
 // Add select 
@@ -57,10 +57,11 @@ conform.addEventListener(`click`,()=>{
     balance += amount
     mainBalance.textContent = balance
     inputAmount.value = ``
+    HistoryUlList.insertAdjacentHTML(`afterbegin`,li(`Add`,amount,balance))
 
   }
   // balance Withdraw condition
-  if (balanceAction= `Withdraw`){
+  if (balanceAction== `Withdraw`){
     if (amount <= 0 || isNaN(amount) ){
       alert(`⚠️ please Inter valid Withdraw Amount `)
       return
@@ -69,7 +70,7 @@ conform.addEventListener(`click`,()=>{
       return
 
     } else{
-      balance += amount
+      balance -= amount
       mainBalance.textContent = balance
       inputAmount.value = ``
     }
