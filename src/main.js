@@ -12,9 +12,9 @@ let cancel = document.querySelector(`.cancel`)
 let balanceAction;
 
 // history li function
-function li(){
+function li(addOrWithdraw,mainBalances){
   return`
-  <li class="border-b-1 border-gray-300 p-2 md:p-4 md:text-2xl text-xl font-semibold">${new Date().toLocaleString()} - Add: $546 | Balance: $546</li>
+  <li class="border-b-1 border-gray-300 p-2 md:p-4 md:text-2xl text-xl font-semibold">${new Date().toLocaleString()} - Add: $${addOrWithdraw} | Balance: $${mainBalances}</li>
 
   `
 }
