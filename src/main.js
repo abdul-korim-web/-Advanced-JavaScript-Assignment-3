@@ -3,6 +3,7 @@ let mainBalance = document.querySelector(`.mainBalance`)
 let addMoney = document.querySelector(`.addMoney`)
 let Withdraw = document.querySelector(`.Withdraw`)
 let History = document.querySelector(`.History`)
+let HistoryDiv = document.querySelector(`.HistoryDiv`)
 let inputForm = document.querySelector(`.inputForm`)
 let inputAmount = document.querySelector(`.inputAmount`)
 let conform = document.querySelector(`.conform`)
@@ -78,7 +79,10 @@ cancel.addEventListener(`click`,()=>{
   } 
   
 })
-
+// history check 
+History.addEventListener(`click`,()=>{
+  HistoryDiv.classList.toggle(`hidden`)
+})
 
 
 
