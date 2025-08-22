@@ -32,3 +32,37 @@ inputForm.addEventListener(`submit`,(e)=>{
   e.preventDefault()
 })
 
+//added or Withdraw comfrom
+conform.addEventListener(`click`,()=>{
+  let amount = parseFloat(inputAmount.value)
+  let balance  = parseFloat(mainBalance.textContent)
+  // balance added condition
+  if (balanceAction == `add`){
+    if(amount <= 0 || isNaN(amount)){
+      alert(`⚠️ please Inter valid Adedd Amount `)
+      inputAmount.value = ``
+      return
+    }
+    balance += amount
+    mainBalance.textContent = balance
+    inputAmount.value = ``
+
+  }
+  // balance Withdraw condition
+  if (balanceAction= `Withdraw`){
+    if (amount <= 0 || isNaN(amount) ){
+      alert(`⚠️ please Inter valid Withdraw Amount `)
+      return
+    } else if(amount>balance){
+      alert(`⚠️ Insufficient Balance!`)
+      return
+
+    } else{
+      balance += amount
+      mainBalance.textContent = balance
+    }
+  }
+
+
+})
+
