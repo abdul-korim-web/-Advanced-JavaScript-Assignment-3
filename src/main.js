@@ -60,6 +60,7 @@ conform.addEventListener(`click`,()=>{
     } else{
       balance += amount
       mainBalance.textContent = balance
+      inputAmount.value = ``
     }
   }
 
