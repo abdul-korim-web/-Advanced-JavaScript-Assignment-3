@@ -11,6 +11,15 @@ let conform = document.querySelector(`.conform`)
 let cancel = document.querySelector(`.cancel`)
 let balanceAction;
 
+// history li function
+function li(){
+  return`
+  <li class="border-b-1 border-gray-300 p-2 md:p-4 md:text-2xl text-xl font-semibold">${new Date().toLocaleString()} - Add: $546 | Balance: $546</li>
+
+  `
+}
+console.log(li());
+
 
 // Add select 
 addMoney.addEventListener(`click`,()=>{
