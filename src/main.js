@@ -73,7 +73,7 @@ conform.addEventListener(`click`,()=>{
       balance -= amount
       mainBalance.textContent = balance
       inputAmount.value = ``
-      HistoryUlList.insertAdjacentHTML(`afterbegin`,li(`Add`,amount,balance))
+      HistoryUlList.insertAdjacentHTML(`afterbegin`,li(`Withdraw`,amount,balance))
     }
   }
 
