@@ -66,3 +66,20 @@ conform.addEventListener(`click`,()=>{
 
 })
 
+// cancel add and Withdraw form 
+cancel.addEventListener(`click`,()=>{
+  let conform = window.confirm(`Are You Sure? You Are cancel `)
+  if (conform){
+    inputForm.classList.add(`hidden`)
+    addMoney.classList.remove(`hidden`)
+    Withdraw.classList.remove(`hidden`)
+    return
+  } 
+  
+})
+
+
+
+
+
+
